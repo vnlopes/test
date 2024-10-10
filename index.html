@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect to Facebook App</title>
+    <script>
+        function openFacebook() {
+            // Verifica se é um dispositivo iOS
+            var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+            if (isIOS) {
+                // Tenta abrir o aplicativo do Facebook
+                window.location.href = "https://www.facebook.com/glowpluscleaning/";
+                // Fallback para o site caso o app não esteja instalado
+                setTimeout(function() {
+                    window.location.href = "https://www.facebook.com";
+                }, 1000);
+            } else {
+                // Redireciona para o site do Facebook no caso de outros dispositivos
+                window.location.href = "https://www.facebook.com/glowpluscleaning/";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Redirecionar para o Facebook</h1>
+    <button id="facebookIcon" onclick="openFacebook()">Abrir Facebook</button>
+</body>
+</html>
